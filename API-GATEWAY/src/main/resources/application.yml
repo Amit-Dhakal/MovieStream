@@ -1,0 +1,32 @@
+server:
+  port: 8060
+spring:
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: movie-cataloge-service
+          uri: lb://movie-cataloge-service
+          predicates:
+            - Path=/movie-cataloge/**
+          filters:
+            - StripPrefix=1
+        - id: movie-stream-service
+          uri: lb://movie-stream-service
+          predicates:
+            - Path=/movie-stream/**
+          filters:
+            - StripPrefix=1
+  main:
+    web-application-type: reactive
+  config:
+    import: optional:configserver:http://localhost:8888
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

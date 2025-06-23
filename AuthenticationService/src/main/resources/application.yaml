@@ -1,0 +1,22 @@
+server:
+  port: 8070
+
+spring:
+  application:
+    name: AUTHENTICATION-SERVICE
+  datasource:
+    url: jdbc:mysql://localhost:3306/authdb
+    username: root
+    password: root1
+    driver-class-name: "com.mysql.cj.jdbc.Driver"
+  jpa:
+    hibernate:
+      ddl-auto: update
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+jwt:
+  expiration: 86400
+  secret: "2eb9d555b9c8c925cb394279a41d7d9460f3c6565e2917ad7b0eb32c111f1c1f2ea002b993c4d63f4bc6d18fa20f3e6fbf4aaa523d783f1a3dc804a23c7e14bde69b1680e6eb8dfc15e1e2014b8b5dbcb72d9d5e5d5875399cef5b28d46279da5b24f9618cb4ae856a3ec7442c05488375c0eb5af93c1420fea717780c6036a936234b73f49fe3c6cc311c505a69f3a4e077d356619de1be02bee70bb7874af68f0357bfd3f9d5e0787e13ff256fe7477511d2ec186f74bdad8561ca1ad3d3a1e4f49652b97686888fb705682990fc2652d434b58cee45f997f739f41a14b4014f12427da45a9043727ae07b193bbce3c78fbc90008c8680bf427fc427a54ed3"
+

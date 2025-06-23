@@ -1,0 +1,9 @@
+rootProject.name = 'movie-video-stream'
+include 'MovieServiceRegistry'
+include 'MovieConfigServer'
+include 'API-GATEWAY'
+include 'MovieCatalogeService'
+include 'MovieStreamService'
+include 'AuthenticationService'
+include 'LiveStreamingService'
+

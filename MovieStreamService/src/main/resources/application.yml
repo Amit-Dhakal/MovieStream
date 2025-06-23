@@ -1,0 +1,19 @@
+server:
+  port: 8084
+spring:
+  application:
+    name: movie-stream-service
+  config:
+    import: optional:configserver:http://localhost:8888
+  cloud:
+    discovery:
+      enabled: true
+    loadbalancer:
+      health-check:
+        interval: 10s
+        initial-delay: 0s
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
